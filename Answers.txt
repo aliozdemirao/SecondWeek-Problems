@@ -74,3 +74,56 @@ Bu örnekte:
 Student class'ının private setter'ı olan bir name property'si vardır. Bu, external kodun (class'ın dışında) name özelliğinin değerini doğrudan ayarlayamayacağı anlamına gelir.
 Bunun yerine, name özelliğini değiştirmenize olanak tanıyan bir (public) changeName(newName: String) fonksiyonu sağlıyoruz. Bu fonksiyon aynı class içinde olduğu için name özelliğine erişebilir ve onu değiştirebilir.
 main fonksiyonunda, bir Student nesnesi oluşturuyoruz ve başlangıçta, setter private olduğu için name özelliğini doğrudan ayarlayamıyoruz. Bunun yerine, name özelliğini güncellemek için changeName fonksiyonunu kullanırız.
+
+
+
+
+
+
+
+
+
+
+
+
+3. "Değişmez" (Immutable) ve "Salt Okunur" (ReadOnly) kavramlarını açıklayın. val değişkenler neden aslında "değişmez" değil de "salt okunur" olarak açıklanmalıdır?
+
+immutable -> değeri hiçbir şekilde değişemez değişkendir.
+read-only -> değeri okunabilen (değişemez anlamına gelmez), set edilemeyen değişkendir. Sadece değeri okunabilir, değer atanamaz. Dolayısıyla okunabilir olan değer, değiştirilebilir.
+
+val değişkenler read-only'dir.
+
+Bir class'ın içerisindeki bir değişkene val olsa bile get() fonksiyonu üzerinden return ettiği değeri değiştirebiliriz. Bu sebeple val değişkenler immutable değildir!
+
+Örnek:
+
+class Box {
+    var width: Int = 20
+    var height: Int = 40
+    var length: Int = 50
+    var usedSpace: Int = 0
+
+    val availableSpace: Int
+        get() {
+            return (width * height * length) - usedSpace // Degiskenin degeri, buradaki ozelliklere gore degisebilir. Bu sebeple val degiskenler immutable degil, read only'dir.
+        }
+}
+
+fun calculateAvailableSpace() {
+    val box = Box()
+    box.height = 10
+    box.width = 20
+    box.length = 5
+    box.usedSpace = 2
+    println(box.availableSpace)
+
+    box.height = 30
+    box.width = 10
+    box.length = 8
+    box.usedSpace = 0
+    println(box.availableSpace)
+}
+
+fun main() {
+    calculateAvailableSpace()
+}
