@@ -1,0 +1,31 @@
+------------------------------------------------- Basic types and Null Safety -------------------------------------------------
+
+1. val ile var arasındaki fark nedir?
+
+Kotlin'de bir değişkeni tanımlarken val ya da var anahtar kelimesini kullanırız.
+val = "Yalnızca bir kez değer atanan, degeri sonradan degistirilemez, degisken" "Value" sabit kelimesinin kisaltmasidir.
+var = "Değer atandıktan sonra degeri sonradan degistirilebilir, degisken" "Variable" degisken kelimesinin kisaltmasidir.
+val değişkenler read-only'dir.
+var değişkenler mutable'dır.
+
+val ile var arasındaki performans farkı yok denecek kadar azdır. Genel anlamda fark etmez. 
+Akademik seviyede val değişkenler var değişkenlere göre daha maliyetlidir. var, val'e göre daha performanslıdır.
+
+Anlamak için şöyle düşünebiliriz:
+
+val için şart koştuk:
+if (değer atadıysak) {
+  değerini değiştirme.
+}
+
+var için böyle bir şart yoktur.
+
+Düz kod üzerinde akademik seviyede var kullanmak daha performanslı (göz ardı edilebilir seviyede).
+Günlük hayat problemlerinde ise val kullanmak daha avantajlıdır. Kodumuz daha performanslı hale gelecektir.
+Bunun sebebi ise multi thread işlemlerdir. 
+Thread işlemlerin birbirleriyle olan iletişim maliyetleri bir yerden sonra çok yükselir.
+
+Bu sebepten best practice olarak val kullanılmalıdır.
+
+Threading işlemleri varsa val daha performanslı,
+Threading işlemleri yoksa var daha performanslı olur.
