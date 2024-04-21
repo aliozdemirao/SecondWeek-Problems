@@ -29,3 +29,48 @@ Bu sebepten best practice olarak val kullanılmalıdır.
 
 Threading işlemleri varsa val daha performanslı,
 Threading işlemleri yoksa var daha performanslı olur.
+
+
+
+
+
+
+
+
+
+
+
+2. Bir var değişkeni val gibi davranmasını nasıl sağlayabiliriz val kelimesini kullanmadan? Bunu neden yapmak isteriz? Örnek bir senaryo verin.
+
+Her bir değişkenin biz görmesek bile arkaplanda oluşturulan get() ve set() fonksiyonları vardır.
+
+val bir değişken oluşturulduğunda arkaplanda get() fonksiyonu,
+var bir değişken için hem get() hem de set() fonksiyonları oluşturulur.
+
+İlgili var değişkenin set() değerini private yaparsak (default public), o değişkenin değerini değiştiremez oluruz. 
+Bu sayede var değişkene dışarıdan değer atanamaz hale gelir. Böylece değişkenin ilk değeri neyse sadece o alınır, sadece o korunmuş olur.
+
+Örnek:
+
+class Student {
+    var name: String = "John"
+        private set // Private setter
+    fun changeName(newName: String) {
+        // Bu fonksiyon name özelliğine erişebilir ve bu özelliği değiştirebilir
+        name = newName
+    }
+}
+fun main() {
+    val student = Student()
+    println("Original Name: ${student.name}")
+    // setter private olduğu için bu kod bir derleme hatasına (compilation error) neden olur.
+    // student.name = "Alice"
+    // name'i değiştirmek için changeName fonksiyonunu kullanın.
+    student.changeName("Alice")
+    println("Updated Name: ${student.name}")
+}
+
+Bu örnekte: 
+Student class'ının private setter'ı olan bir name property'si vardır. Bu, external kodun (class'ın dışında) name özelliğinin değerini doğrudan ayarlayamayacağı anlamına gelir.
+Bunun yerine, name özelliğini değiştirmenize olanak tanıyan bir (public) changeName(newName: String) fonksiyonu sağlıyoruz. Bu fonksiyon aynı class içinde olduğu için name özelliğine erişebilir ve onu değiştirebilir.
+main fonksiyonunda, bir Student nesnesi oluşturuyoruz ve başlangıçta, setter private olduğu için name özelliğini doğrudan ayarlayamıyoruz. Bunun yerine, name özelliğini güncellemek için changeName fonksiyonunu kullanırız.
