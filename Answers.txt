@@ -127,3 +127,39 @@ fun calculateAvailableSpace() {
 fun main() {
     calculateAvailableSpace()
 }
+
+
+
+
+
+
+
+
+
+
+
+
+4. "Tip Çıkarımı" (Type inference) kavramını açıklayın. Hangi durumlarda tip belirtmek kesin olarak gereklidir?
+
+Type Inference: Kotlin'de bir değişkenin türünü açık bir şekilde (Explicitly) belirtmek zorunda olmadan, derleyicinin değişkenin türünü otomatik olarak çıkarmasını sağlayan bir özelliktir.
+
+Kotlin, derleme zamanı (compile-time) tip bilgisi için bir tip çıkarımı kavramına sahiptir, yani koddaki bazı tür bilgileri derleyici tarafından çıkarılmak üzere atlanabilir. 
+Kotlin tarafından desteklenen iki tür tür çıkarımı vardır:
+
+1- Local type inference, expressions'ların tiplerini local olarak, statement/expression scope'unda çıkarmak için;
+2- Function signature type inference, fonksiyon return değerlerinin ve/veya parametrelerinin tiplerinin çıkarılması için.
+
+
+Nullable: Bir degiskene null deger atamasi yapabilmek icin tipinin sonuna ? isareti konur.
+	
+Eger bir degiskene tip verilmez ve direkt null deger atamasi yapilirsa, IDE tip cikarimi yaparken,
+bu degiskenin tipini Nothing? olarak isaretler. Cunku hangi tipe karsilik geldigini bilemez.
+Nothing -> içi bomboş bir class.
+
+
+Değişkeni tanımlayıp daha sonra atama işlemi yapacaksak tipini belirtmemiz gerekir.
+
+
+Number'lar için dikkat etmemiz gereken bir nokta var:
+Eğer değişkenin değeri Int aralığında olursa tür otomatik olarak Int olarak belirleniyor. Int olmasını istemiyorsak, ilgili aralığa göre tipini belirtmemiz gerekir.
+Eğer değişkenin değeri Int aralığında olmazsa tür otomatik olarak Long olarak belirleniyor.
