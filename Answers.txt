@@ -163,3 +163,31 @@ Değişkeni tanımlayıp daha sonra atama işlemi yapacaksak tipini belirtmemiz 
 Number'lar için dikkat etmemiz gereken bir nokta var:
 Eğer değişkenin değeri Int aralığında olursa tür otomatik olarak Int olarak belirleniyor. Int olmasını istemiyorsak, ilgili aralığa göre tipini belirtmemiz gerekir.
 Eğer değişkenin değeri Int aralığında olmazsa tür otomatik olarak Long olarak belirleniyor.
+
+
+
+
+
+
+
+
+
+
+
+
+5. Kotlin'de tüm değişkenlerin sınıf olarak bulunması, "ilkel tip" (primitive type) olmadıkları anlamına gelir mi? Arka planda neler oluyor?
+
+Değişkenler ikiye ayrılır:
+1- Referans Tipli (Boxed)
+2- Primitive Tipli (Unboxed)
+
+Primitive Tipler, hem kapladıkları alan bakımından hem de erişim hızları bakımından Referans tipli değişkenlere göre çok daha hızlı çalışan değişken tipleridir.
+
+Kotlin'de Primitive tipler birer class gibi görünürler. Runtime'da class olmayan primitive hallerine optimize edilirler. Java'daki Primitive tiplere karşılık geliyor.
+String hariç. String, Java tarafında da class halinde tutulur. Bu durumu Show Kotlin Bytecode ile inceleyebiliriz.
+
+Primitive tipli değişkenler şöyle davranır: var age: Int = 30	// Java'daki int tipine denk gelir.
+Stack'te hem değişkenin kendisi hem de değeri için yer ayrılır.
+
+Referans tipli değişkenler şöyle davranır: var age: Int? = 30	// Java'daki Integer tipine denk gelir.
+Değişkenin adı Stack'te değeri Heap'te tutulur.
