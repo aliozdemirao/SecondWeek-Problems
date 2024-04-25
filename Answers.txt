@@ -255,3 +255,28 @@ daha onemli, kritik kısımlar icin !! kullanmaliyiz.
 Ornek:
 1- Bankacılık uygulamasında kullanıcının balance değeri yanlış gelecekse ->  !! kullan. kritik hata.
 2- Bankacılık uygulamasında karşılama ekranında hoşgeldiniz ad_soyad. -> ?. kullan. kritik hata değil.
+
+
+
+
+
+
+
+
+
+
+
+9. Bir değişkene null değer atanır ve tip belirtilmezse Kotlin bu değişkeni nasıl yorumlar?
+
+Eger bir degiskene tip verilmez ve direkt null deger atamasi yapilirsa, IDE Tip Çıkarımı (Type Inference) yaparken bu degiskenin tipini Nothing? olarak isaretler. 
+Cunku hangi tipe karsilik geldigini bilemez.
+
+val number1 = null		// (Type: Nothing? olarak belirlendi)
+val number2: Nothing? = null	
+
+Nothing içi bomboş bir classtır.
+Bir fonksiyonun, herhangi bir değer döndürmek zorunda olmadığı durumlarda kullanılır.
+Genellikle Exception fırlatmalarda görülür.
+
+Unit'ten farklıdır. Unit, boş da olsa bir değer döndüğünü söyler. Nothing hiçbir şey değil.
+Unit -> "", Nothing -> null gibi düşünebiliriz.
