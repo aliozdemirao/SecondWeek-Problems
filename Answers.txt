@@ -280,3 +280,32 @@ Genellikle Exception fırlatmalarda görülür.
 
 Unit'ten farklıdır. Unit, boş da olsa bir değer döndüğünü söyler. Nothing hiçbir şey değil.
 Unit -> "", Nothing -> null gibi düşünebiliriz.
+
+
+
+
+
+
+
+
+
+
+
+10. İlkel bir değişkenin nullable olması ile null değer alamaması arasında bellek yönetimi açısından nasıl farklar vardır?
+
+Eğer bir primitive type değişken nullable olarak işaretlendi ise o değişken artık primitive olarak değil reference type bir nesne olarak temsil edilecektir.
+
+Stack ve Heap denen 2 adet memory alanımız vardır. Stack ve Heap.
+
+Biz bir primitive tipli (unboxed) değişken oluşturduğumuz zaman hem değişkenin kendisi hem de değeri için stackde yer ayrılır.
+val age: Int = 30
+Bu ikisi toplamda bir Int kadar yer kaplar. Stack alanı, Heap alanından daha hızlı çalışır.
+
+Eğer referans tipli (boxed) bir değişkenle çalışıyorsak, o değişkenin ismi Stack'de tutulur, değeri Heap'de tutulur.
+val age: Int? = 30
+age'in kendisi Stack'de tutulur. İçerdiği değer ise Heap'de tutulur.
+
+Eğer bu değişkene null değerini verirsek, heapde kullandığı alan boşalır fakat stackde değişkenin ismi için yer kaplanmaya devam edilir.
+Dolayısıyla, değişkeni null'lamamız, değişken için memory'de herhangi bir alan tutulmuyor anlamına gelmez.
+Değişkenin kendisi için bir alan tutulur fakat değeri için bir alan tutulmuyor anlamına gelir.
+Sonrasında bir değer atarsak, heapde değişkenin değeri, stack'de ise değişkenin kendisi tutulmaya devam edilir.
