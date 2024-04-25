@@ -331,3 +331,27 @@ Böyle değişkenlere null değerini verirsek, heapde kullandığı alan boşal�
 Dolayısıyla, değişkeni null'lamamız, değişken için memory'de herhangi bir alan tutulmuyor anlamına gelmez.
 Değişkenin kendisi için bir alan tutulur fakat değeri için bir alan tutulmuyor anlamına gelir.
 Sonrasında bir değer atarsak, heapde değişkenin değeri, stack'de ise değişkenin kendisi tutulmaya devam edilir.
+
+
+
+
+
+
+
+
+
+
+
+12. Nullable bir değişkenle çalışırken hangi operatörleri kullanırız? Bu operatörlerin kullanım farkları nelerdir? Hangisini ne zaman kullanmak daha anlamlıdır?
+
+?. (safe call operatörü) ve !!. (non-null assertion operatörü) 8. soruda cevaplandı.
+
+?: (elvis operatörü):
+	Nullable bir değişkenin null olması durumunda varsayılan bir değer belirlemek için kullanılır.
+	Eğer değişken null ise, belirtilen varsayılan değer döndürülür.
+	Örneğin: val length = nullableVariable?.length ?: 0
+
+Hangi operatörün kullanılacağı durum, kullanım senaryosuna bağlıdır:
+Ornek:
+1- Bankacılık uygulamasında kullanıcının balance değeri yanlış gelecekse ->  !! kullan. kritik hata.
+2- Bankacılık uygulamasında karşılama ekranında hoşgeldiniz ad_soyad. -> ?. kullan. kritik hata değil.
