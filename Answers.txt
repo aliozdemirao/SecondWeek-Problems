@@ -309,3 +309,25 @@ Eğer bu değişkene null değerini verirsek, heapde kullandığı alan boşalı
 Dolayısıyla, değişkeni null'lamamız, değişken için memory'de herhangi bir alan tutulmuyor anlamına gelmez.
 Değişkenin kendisi için bir alan tutulur fakat değeri için bir alan tutulmuyor anlamına gelir.
 Sonrasında bir değer atarsak, heapde değişkenin değeri, stack'de ise değişkenin kendisi tutulmaya devam edilir.
+
+
+
+
+
+
+
+
+
+
+
+11. Nullable bir değişkenin bir değere sahip olması ile null olması arasında bellek yönetimi açısından nasıl bir fark vardır? Null değer almış bir değişken bellekte yer kaplamaz diyebilir miyiz?
+
+JVM based programlama dillerinde bizim çok fazla bellek yönetimi yapma ihtiyacımız olmuyor. 
+Low level dillerde özellikle referans tipli değişkenlerde işleri bitince null'lamaları gerekiyor.
+Kotlinde de kullanmadığımız ve fazlaca yer kaplayan yapıları, büyük nesneleri null'layabiliriz.
+
+Nullable olan değişkenler Referans tiplidirler. 
+Böyle değişkenlere null değerini verirsek, heapde kullandığı alan boşalır fakat stackde değişkenin ismi için yer kaplanmaya devam edilir.
+Dolayısıyla, değişkeni null'lamamız, değişken için memory'de herhangi bir alan tutulmuyor anlamına gelmez.
+Değişkenin kendisi için bir alan tutulur fakat değeri için bir alan tutulmuyor anlamına gelir.
+Sonrasında bir değer atarsak, heapde değişkenin değeri, stack'de ise değişkenin kendisi tutulmaya devam edilir.
