@@ -230,3 +230,28 @@ Bir değişkeni nullable yapmak için "?" işaretini kullanarak belirtilen bir t
 
 var nullableInt: Int? = null
 nullableInt = 10
+
+
+
+
+
+
+
+
+
+
+
+8. "Null Güvenliği" (Null Safety) kavramını açıklayın.
+
+Elimizde nullable bir değişken varsa ve bu degiskenin methodlarindan birine ihtiyaç duyacaksak ya da direkt olarak kullanacaksak, 
+bu durumda IDE'ye ya bu degiskenin null olmayacaginin garantisi !! operatoru ile vermek gerekiyor ya da null degilse çalışsın demek için ?. operatorunu kullanmak gerekiyor.
+
+Best Practice olarak kodlarimizi !! seklinde yazmamiz Kotlin Null Pointer Exception hatasi almamizi saglar.
+
+Bu sayede gozden kaçan nullable degerleri bulabilmemizi saglar.
+Ancak, canliya cikan projemizde, cok gerekli olmayan kisimlar icin, daha az onemli olan kisimlar icin ?. 
+daha onemli, kritik kısımlar icin !! kullanmaliyiz.
+
+Ornek:
+1- Bankacılık uygulamasında kullanıcının balance değeri yanlış gelecekse ->  !! kullan. kritik hata.
+2- Bankacılık uygulamasında karşılama ekranında hoşgeldiniz ad_soyad. -> ?. kullan. kritik hata değil.
