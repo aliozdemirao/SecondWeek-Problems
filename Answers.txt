@@ -213,3 +213,20 @@ Bu, tip güvenliği sağlayan bir özelliktir çünkü programın çalışma zam
 
 Kotlin gibi modern programlama dilleri, tip güvenliğini desteklemek için derleme zamanında (Compile time) tür denetimlerini yapar ve kodun daha sağlam olmasını sağlar. 
 Bu sayede programcılar, hataları daha erken aşamalarda tespit edebilir ve daha güvenilir yazılımlar geliştirebilir.
+
+
+
+
+
+
+
+
+
+
+
+7. Bir değişkeni nullable yapmak için ne yapmalıyız?
+
+Bir değişkeni nullable yapmak için "?" işaretini kullanarak belirtilen bir türü "nullable" hale getirebiliriz. Bu işaret, o değişkenin null değerini kabul edebileceğini belirtir.
+
+var nullableInt: Int? = null
+nullableInt = 10
