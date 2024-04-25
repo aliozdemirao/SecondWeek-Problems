@@ -191,3 +191,25 @@ Stack'te hem değişkenin kendisi hem de değeri için yer ayrılır.
 
 Referans tipli değişkenler şöyle davranır: var age: Int? = 30	// Java'daki Integer tipine denk gelir.
 Değişkenin adı Stack'te değeri Heap'te tutulur.
+
+
+
+
+
+
+
+
+
+
+
+
+6. "Tip Güvenliği" (Type Safety) kavramını açıklayın.
+
+Tip güvenliği (Type Safety), bir programlama dilinde belirli bir türün yanlışlıkla başka bir türe dönüştürülmesini önlemeyi amaçlayan bir kavramdır.
+Bu kavram, tür uyumsuzluklarından kaynaklanan hataları azaltarak kodun daha güvenilir olmasını sağlar.
+
+Örneğin, Kotlin'de bir değişkenin int türünde olduğunu belirttiğinizde, o değişkene sadece tamsayı değerleri atanabilir ve diğer türlerden gelen değerler kabul edilmez. 
+Bu, tip güvenliği sağlayan bir özelliktir çünkü programın çalışma zamanında (run time) beklenmeyen tür dönüşümleri veya hatalı tür atamaları olasılığını azaltır.
+
+Kotlin gibi modern programlama dilleri, tip güvenliğini desteklemek için derleme zamanında (Compile time) tür denetimlerini yapar ve kodun daha sağlam olmasını sağlar. 
+Bu sayede programcılar, hataları daha erken aşamalarda tespit edebilir ve daha güvenilir yazılımlar geliştirebilir.
