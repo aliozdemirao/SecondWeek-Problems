@@ -440,3 +440,41 @@ val doubleNumber: Double = 3.141592653589793
 val floatNumber: Float = 2.71828f
 
 Farklı diller ve yerel ayarlarda ondalık ayıracı olarak virgül (,) kullanılabilir. Bu durumlarda kullanıcılardan input alırken virgülü noktaya çevirmek önemlidir.
+
+
+
+
+
+
+
+
+
+
+6. Double ve Float değişkenler ondalık kısımda kaç basamağa kadar işlem yaparlar? Bu sınırın üzerinde gelen ondalık bilgileri için nasıl davranırlar? Hangi durumlar için Float ve hangi durumlar için Double kullanılmalıdır?
+
+Type		Size (bits)	Decimal digits
+Float		32		6-7
+Double		64		15-16
+
+
+val floatNumberWithExtraPrecision: Float = 1.123456789f
+println(floatNumberWithExtraPrecision) // Çıktı: 1.1234568
+
+Bu örnekte, floatNumberWithExtraPrecision değişkeninde, 7. basamaktan sonrası yuvarlanır.
+
+
+val doubleNumberWithExtraPrecision: Double = 1.12345678901234567890
+println(doubleNumberWithExtraPrecision) // Çıktı: 1.1234567890123457
+
+Bu örnekte, doubleNumberWithExtraPrecision değişkeninde, 16. basamaktan sonrası yuvarlanır.
+
+
+Float daha az bellek kullanır ve genellikle hassasiyetin çok kritik olmadığı durumlarda tercih edilir:
+	Grafik işlemleri ve oyun geliştirme
+	Sensör verileri ve gerçek zamanlı sistemler
+	Bellek kullanımının kısıtlı olduğu gömülü sistemler
+
+Double daha yüksek hassasiyet sağlar ve genellikle hassas hesaplamaların gerektiği durumlarda tercih edilir:
+	Finansal hesaplamalar
+	Bilimsel araştırmalar ve mühendislik hesaplamaları
+	Veri analizi ve yüksek hassasiyet gerektiren matematiksel işlemler
