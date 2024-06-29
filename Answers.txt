@@ -355,3 +355,22 @@ Hangi operatörün kullanılacağı durum, kullanım senaryosuna bağlıdır:
 Ornek:
 1- Bankacılık uygulamasında kullanıcının balance değeri yanlış gelecekse ->  !! kullan. kritik hata.
 2- Bankacılık uygulamasında karşılama ekranında hoşgeldiniz ad_soyad. -> ?. kullan. kritik hata değil.
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------- Numbers -------------------------------------------------
+
+1. Kaç farklı tipte "number" sınıfı miras alan "alt sınıf" (child class) vardır? Bunların değer aralıkları neden önemlidir?
+
+Byte, Short, Int, Long, Float ve Double olmak üzere 6 child class, Number class'ını miras almaktadır.
+
+Değer aralıkları, seçilecek veri tipinin bellek kullanımı ve performans açısından uygunluğunu belirler. 
+Doğru veri tipini seçmek, uygulamanın daha verimli çalışmasını sağlar ve gereksiz bellek kullanımını önler.
+Ayrıca, belirli bir değer aralığını aşmayan sayılar için daha küçük veri tipleri kullanmak, bellek tasarrufu sağlar ve bellek erişim hızını artırır.
