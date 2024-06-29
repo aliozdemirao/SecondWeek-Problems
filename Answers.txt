@@ -667,3 +667,67 @@ Birleştirilmiş operatörler: += -= *= /= %=
 14. Sayısal değişkenlerde hangi karşılaştırma operatörleri kullanılabilir?
 
 Karşılaştırma Operatörleri: < > <= >= == !=
+
+
+
+
+
+
+
+
+
+
+
+15. Bit düzeyinde operatörler (Bitwise operators) nelerdir? Ne amaçla kullanılır? Kotlin'de bunları nasıl kullanabilirsiniz?
+
+Bit düzeyinde operatörler (bitwise operators), ikili (binary) sayı sistemindeki bitlerle işlem yapmamıza olanak tanıyan operatörlerdir. 
+Bu operatörler, özellikle düşük seviyeli programlama, performans kritik uygulamalar ve belirli algoritmalar için oldukça kullanışlıdır. 
+Bit düzeyinde operatörler genellikle doğrudan bit manipülasyonu, bit maskeleri, şifreleme algoritmaları, veri sıkıştırma ve düşük seviyeli cihaz sürücüsü yazılımı gibi alanlarda kullanılır.
+
+1. Bitwise AND (and)
+Bitwise AND operatörü, iki sayının karşılık gelen bitlerini AND işlemi ile karşılaştırır. Sonuç olarak, her iki bit de 1 olduğunda sonuç 1, aksi halde 0 olur.
+
+2. Bitwise OR (or)
+Bitwise OR operatörü, iki sayının karşılık gelen bitlerini OR işlemi ile karşılaştırır. Sonuç olarak, herhangi bir bit 1 olduğunda sonuç 1 olur.
+
+3. Bitwise XOR (xor)
+Bitwise XOR operatörü, iki sayının karşılık gelen bitlerini XOR işlemi ile karşılaştırır. Sonuç olarak, bitler farklı olduğunda sonuç 1, aynı olduğunda 0 olur.
+
+4. Bitwise NOT (inv)
+Bitwise NOT operatörü, tek bir sayının bitlerini tersine çevirir (0'ları 1 yapar, 1'leri 0 yapar).
+
+5. Bitwise Shift Left (shl)
+Bitwise Shift Left operatörü, bir sayının bitlerini belirli bir sayı kadar sola kaydırır. Bu, sayının 2'nin kaydırılan sayı kadar kuvveti ile çarpılmasıyla aynıdır.
+
+6. Bitwise Shift Right (shr)
+Bitwise Shift Right operatörü, bir sayının bitlerini belirli bir sayı kadar sağa kaydırır. Bu, sayının 2'nin kaydırılan sayı kadar kuvveti ile bölünmesiyle aynıdır.
+
+7. Unsigned Shift Right (ushr)
+Unsigned Shift Right operatörü, bir sayının bitlerini sağa kaydırırken işaret bitini dikkate almaz. Bu, negatif sayılar için önemlidir.
+
+    
+    val number = -12 // 11111111111111111111111111110100 in binary (32-bit representation)
+
+    val a = 12 // 01100 in binary
+    val b = 25 // 11001 in binary
+
+    val resultAnd = a and b
+    println(resultAnd) // Output: 8 (01000 in binary)
+
+    val resultOr = a or b
+    println(resultOr) // Output: 29 (11101 in binary)
+
+    val resultXor = a xor b
+    println(resultXor) // Output: 21 (10101 in binary)
+
+    val resultInv = a.inv()      // a: 00000000000000000000000000001100
+    println(resultInv) // Output: -13 (11111111111111111111111111110011 in binary, considering 32-bit representation)
+
+    val resultShl = a shl 2
+    println(resultShl) // Output: 48 (110000 in binary)
+
+    val resultShr = a shr 2
+    println(resultShr) // Output: 3 (11 in binary)
+
+    val result = number ushr 2
+    println(result) // Output: 1073741821 (00111111111111111111111111111101 in binary)
