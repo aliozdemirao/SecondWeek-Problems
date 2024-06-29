@@ -584,3 +584,20 @@ val creditCardNumber = 1234_5678_9012_3456L
 // Hatalı kullanımlar
 val invalidNumber1 = _1000  // Hata: Sayı başında alt çizgi olmamalıdır.
 val invalidNumber2 = 1000_  // Hata: Sayı sonunda alt çizgi olmamalıdır.
+
+
+
+
+
+
+
+
+
+
+11. == ile neyi karşılaştırırız? === ile neyi karşılaştırırız?
+
+== operatörü, iki değerin eşit olup olmadığını karşılaştırır. Bu operatör, Kotlin'de equals fonksiyonunu çağırarak çalışır. 
+Yani, iki nesnenin değerlerini karşılaştırır ve eşitse true, değilse false döner.
+
+=== operatörü ise, iki nesnenin aynı referansa sahip olup olmadığını karşılaştırır. Bu operatör, nesnelerin bellekte aynı yerde olup olmadığını kontrol eder. 
+Eğer iki değişken aynı nesneyi işaret ediyorsa true, farklı nesneleri işaret ediyorsa false döner.
