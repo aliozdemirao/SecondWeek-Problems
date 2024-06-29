@@ -478,3 +478,31 @@ Double daha yüksek hassasiyet sağlar ve genellikle hassas hesaplamaların gere
 	Finansal hesaplamalar
 	Bilimsel araştırmalar ve mühendislik hesaplamaları
 	Veri analizi ve yüksek hassasiyet gerektiren matematiksel işlemler
+
+
+
+
+
+
+
+
+
+
+7. Ondalık(Decimal), Onaltılık (Hexadecimal) ve İkilik (Binary) değişkenleri Kotlin'de nasıl tanımlayabilirsiniz?
+
+Ondalık (Decimal) sayılar, en yaygın kullanılan sayısal sistemdir ve varsayılan olarak herhangi bir sayı ondalık sistemde kabul edilir. Ondalık sayılar doğrudan yazılır:
+
+val decimalInt: Int = 42
+val decimalDouble: Double = 3.14159
+
+
+Onaltılık (Hexadecimal) sayılar, 0x veya 0X ön eki ile belirtilir. 0-9 arası rakamlar ve A-F (veya a-f) harfleri kullanılarak temsil edilir.
+
+val hexInt: Int = 0x2A // 42'nin onaltılık gösterimi
+val hexLong: Long = 0x2AL // 42'nin onaltılık gösterimi, Long tipi
+
+
+İkilik (Binary) sayılar, 0b veya 0B ön eki ile belirtilir. Sadece 0 ve 1 rakamları kullanılır.
+
+val binaryInt: Int = 0b101010 // 42'nin ikilik gösterimi
+val binaryLong: Long = 0b101010L // 42'nin ikilik gösterimi, Long tipi
