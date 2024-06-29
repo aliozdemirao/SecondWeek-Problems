@@ -751,3 +751,32 @@ import java.math.BigDecimal  // Sınırsız büyüklükte tam sayılar için.
 import java.math.BigInteger  // Yüksek hassasiyetli ondalık sayılar için.
 
 BigInteger ve BigDecimal özelinde, sınırlar JVM'in atadığı belleğe göre değişebilir.
+
+
+
+
+
+
+
+
+
+
+
+17. Double ve Float değişkenler kullanılırken "yuvarlama" davranışı nasıldır? Bu nasıl değiştirilebilir?
+
+Kotlin'de varsayılan olarak ondalıklı sayılar, en yakın tam sayıya doğru yuvarla mekanizması ile çalışır.
+
+RoundingMode.UP: Her zaman yukarı yuvarlar.
+RoundingMode.DOWN: Her zaman aşağı yuvarlar.
+RoundingMode.CEILING: Pozitif sayılarda yukarı, negatif sayılarda aşağı yuvarlar.
+RoundingMode.FLOOR: Pozitif sayılarda aşağı, negatif sayılarda yukarı yuvarlar.
+RoundingMode.HALF_UP: 5 ve üzeri değerlerde yukarı, altında ise aşağı yuvarlar.
+RoundingMode.HALF_DOWN: 5 ve üzeri değerlerde aşağı, altında ise yukarı yuvarlar.
+RoundingMode.HALF_EVEN: En yakın çift sayıya yuvarlar (banker's rounding).
+
+
+import java.math.MathContext
+import java.math.RoundingMode
+
+val value = BigDecimal("9.87654321")
+val roundedHalfUp = value.round(MathContext.UNLIMITED).setScale(2, HALF_UP) // Çıktı: 9.88	Virgülden sonra 2. haneye göre işlem yapar.
