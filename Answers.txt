@@ -506,3 +506,27 @@ val hexLong: Long = 0x2AL // 42'nin onaltılık gösterimi, Long tipi
 
 val binaryInt: Int = 0b101010 // 42'nin ikilik gösterimi
 val binaryLong: Long = 0b101010L // 42'nin ikilik gösterimi, Long tipi
+
+
+
+
+
+
+
+
+
+
+8. Sekizlik (Octal) değişkenler Java'da nasıl tanımlanır? Kotlin'de Sekizlik değişken tanımlanabilir mi?
+
+Java'da sekizlik (octal) sayılar, 0 ön eki kullanılarak tanımlanır. Bu sayılar 0-7 arasındaki rakamları kullanır.
+
+int octalNumber = 052; // 52 sekizlik sistemde, 42 ondalık sistemde
+System.out.println(octalNumber); // Çıktı: 42
+
+
+Kotlin, doğrudan sekizlik (octal) sayı sistemi için bir sözdizimi (syntax) sağlamaz. Yani, Java'da olduğu gibi 0 ön ekini kullanarak sekizlik sayıları Kotlin'de tanımlayamazsınız.
+Sekizlik sayıları ondalık sayılara dönüştürerek kullanabilirsiniz:
+
+val octalString = "52"
+val decimalValue = octalString.toInt(8)
+println(decimalValue) // Çıktı: 42
