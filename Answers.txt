@@ -391,3 +391,16 @@ Tip çıkarımı, atanan değere bakarak değişkenin türünü belirleme sürec
 
 Type Inference sırasında eğer sayı Int aralığında ise, tipi default olarak Int set edilir.
 Type Inference sırasında eğer sayı Int aralığında değilse, tipi default olarak Long set edilir.
+
+
+
+
+
+
+
+
+
+
+3. Float değişken oluştururken F ve f harfleri varken, Long değişken oluştururken neden küçük l harfi yoktur?
+
+Küçük l harfi, bazı yazı tiplerinde rakam olan 1 (bir) ile karışabilir. Bu, kodun okunabilirliğini azaltır ve potansiyel olarak hata yapma riskini artırır. Bu sebeple 'l' harfi kullanılmaz.
