@@ -422,3 +422,21 @@ Float daha az bellek kullanımı ve yeterli hassasiyet gerektiren durumlar için
 Type		Size (bits)	Significant bits	Exponent bits	Decimal digits
 Float		32		24			8		6-7
 Double		64		53			11		15-16
+
+
+
+
+
+
+
+
+
+
+5. Double ve Float değişkenlerle çalışırken ondalık ayıracı olarak hangi işaretler kullanılır? Bu ayıraçların kullanımında nelere dikkat etmek gerekir?
+
+Kotlin'de Double ve Float değişkenlerle çalışırken ondalık ayıracı olarak nokta (.) kullanılır. Bu, sayının tam kısmı ile kesirli kısmını ayıran standart bir işarettir.
+
+val doubleNumber: Double = 3.141592653589793
+val floatNumber: Float = 2.71828f
+
+Farklı diller ve yerel ayarlarda ondalık ayıracı olarak virgül (,) kullanılabilir. Bu durumlarda kullanıcılardan input alırken virgülü noktaya çevirmek önemlidir.
