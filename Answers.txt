@@ -530,3 +530,32 @@ Sekizlik sayıları ondalık sayılara dönüştürerek kullanabilirsiniz:
 val octalString = "52"
 val decimalValue = octalString.toInt(8)
 println(decimalValue) // Çıktı: 42
+
+
+
+
+
+
+
+
+
+
+9. "Geleneksel Notasyon" (Conventional Notation) gösterimi nasıl yapılır?
+
+Kotlin'de "Geleneksel Notasyon" (Conventional Notation), özellikle bilimsel ve mühendislik hesaplamalarında yaygın olarak kullanılan bir yöntemdir. 
+Bu notasyon, sayıları çok büyük veya çok küçük değerlerle ifade etmek için kullanılır. 
+Geleneksel notasyon, Kotlin'de ve birçok diğer programlama dilinde e-notation olarak bilinir ve sayıları 10'un kuvvetleri şeklinde ifade eder.
+
+Geleneksel notasyon, e veya E karakteri ile kullanılır ve bu karakter, 10'un kuvvetini belirtir. Bu notasyon, Double ve Float veri tipleriyle birlikte kullanılır.
+
+val largeDoubleNumber: Double = 1.23e10
+println(largeDoubleNumber) // Çıktı: 1.23 * 10^10 yani 12300000000.0
+
+val smallDoubleNumber: Double = 1.23e-10
+println(smallDoubleNumber) // Çıktı: 1.23 * 10^-10 yani 0.000000000123
+
+val largeFloatNumber: Float = 1.23e10f
+println(largeFloatNumber) // Çıktı: 1.23 * 10^10 yani 12300000000.0
+
+val smallFloatNumber: Float = 1.23e-10f
+println(smallFloatNumber) // Çıktı: 1.23 * 10^-10 yani 0.000000000123
