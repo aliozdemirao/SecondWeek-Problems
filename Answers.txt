@@ -601,3 +601,41 @@ Yani, iki nesnenin değerlerini karşılaştırır ve eşitse true, değilse fal
 
 === operatörü ise, iki nesnenin aynı referansa sahip olup olmadığını karşılaştırır. Bu operatör, nesnelerin bellekte aynı yerde olup olmadığını kontrol eder. 
 Eğer iki değişken aynı nesneyi işaret ediyorsa true, farklı nesneleri işaret ediyorsa false döner.
+
+
+
+
+
+
+
+
+
+
+
+12. === operatörü ile karşılaştırma yaparken Byte değer aralığı neden önemlidir? Kotlin bu aralığa göre neden özel bir davranış sergiler?
+
+Kotlin'de === operatörü ile karşılaştırma yaparken, Byte veri tipinin değer aralığı (-128 ile 127 arasında) önemli bir rol oynar. 
+Bunun nedeni, Kotlin'in (ve altta yatan JVM'in) bu küçük aralıktaki Byte nesnelerini optimizasyon amacıyla havuzlamasıdır. 
+Bu durum, === operatörü ile yapılan karşılaştırmaların sonuçlarını etkileyebilir.
+Referans eşitliği === işlemi ve bunun olumsuzlanmış karşılığı !== ile kontrol edilir.
+
+    val number: Int = 127   // int
+    val boxedNumber: Int? = number
+    val anotherBoxedNumber: Int? = number
+    println(boxedNumber === anotherBoxedNumber) // true
+
+    val number2: Int = 128
+    val boxedNumber2: Int? = number2
+    val anotherBoxedNumber2: Int? = number2
+    println(boxedNumber2 === anotherBoxedNumber2) // false
+
+Not: Runtime'da primitive (ilkel) türler tarafından temsil edilen değerler için (örneğin, Int), === eşitlik kontrolü == kontrolüne eşdeğerdir.
+
+    var a = "Hello"
+    var b = a
+    var c = "world"
+    var d = "world"
+
+    println(a === b)  // true
+    println(a === c)  // false
+    println(c === d)  // true
