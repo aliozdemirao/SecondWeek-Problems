@@ -654,3 +654,16 @@ Not: Runtime'da primitive (ilkel) türler tarafından temsil edilen değerler i�
 Temel aritmetik operatörler: * / % + - 
 Artırma ve azaltma operatörleri: ++ --
 Birleştirilmiş operatörler: += -= *= /= %=
+
+
+
+
+
+
+
+
+
+
+14. Sayısal değişkenlerde hangi karşılaştırma operatörleri kullanılabilir?
+
+Karşılaştırma Operatörleri: < > <= >= == !=
