@@ -374,3 +374,20 @@ Byte, Short, Int, Long, Float ve Double olmak üzere 6 child class, Number class
 Değer aralıkları, seçilecek veri tipinin bellek kullanımı ve performans açısından uygunluğunu belirler. 
 Doğru veri tipini seçmek, uygulamanın daha verimli çalışmasını sağlar ve gereksiz bellek kullanımını önler.
 Ayrıca, belirli bir değer aralığını aşmayan sayılar için daha küçük veri tipleri kullanmak, bellek tasarrufu sağlar ve bellek erişim hızını artırır.
+
+
+
+
+
+
+
+
+
+
+2. Eğer bir değişkene tip belirtimi yapılmaz ve bir değer atanırsa, Kotlin tip çıkarımını nasıl yapar?
+
+Kotlin'de, bir değişkene tip belirtimi yapılmazsa ve bir değer atanırsa, Kotlin derleyicisi otomatik olarak tip çıkarımı (type inference) yapar. 
+Tip çıkarımı, atanan değere bakarak değişkenin türünü belirleme sürecidir.
+
+Type Inference sırasında eğer sayı Int aralığında ise, tipi default olarak Int set edilir.
+Type Inference sırasında eğer sayı Int aralığında değilse, tipi default olarak Long set edilir.
