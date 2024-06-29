@@ -639,3 +639,18 @@ Not: Runtime'da primitive (ilkel) türler tarafından temsil edilen değerler i�
     println(a === b)  // true
     println(a === c)  // false
     println(c === d)  // true
+
+
+
+
+
+
+
+
+
+
+13. Sayısal değişkenlerde hangi matematiksel operatörler kullanılabilir?
+
+Temel aritmetik operatörler: * / % + - 
+Artırma ve azaltma operatörleri: ++ --
+Birleştirilmiş operatörler: += -= *= /= %=
