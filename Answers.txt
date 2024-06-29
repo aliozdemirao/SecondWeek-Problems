@@ -559,3 +559,28 @@ println(largeFloatNumber) // Çıktı: 1.23 * 10^10 yani 12300000000.0
 
 val smallFloatNumber: Float = 1.23e-10f
 println(smallFloatNumber) // Çıktı: 1.23 * 10^-10 yani 0.000000000123
+
+
+
+
+
+
+
+
+
+
+10. Sayısal değişkenlerde alt çizgi (underscore) nasıl kullanılır? Kotlin bunu nasıl yorumlar?
+
+Kotlin'de, sayısal değişkenlerde alt çizgi (_) kullanımı, büyük sayıları daha okunabilir hale getirmek için kullanılır.
+Alt çizgi, sayının değerini veya işleyişini etkilemez; sadece geliştiricinin sayıyı daha kolay okumasını sağlar. 
+Kotlin derleyicisi alt çizgileri göz ardı eder ve sayıyı bir bütün olarak değerlendirir.
+
+val million = 1_000_000
+val bytes = 0b1101_0101_0011_1110
+val hexBytes = 0xFF_EC_DE_5E
+val pi = 3.1415_9265
+val creditCardNumber = 1234_5678_9012_3456L
+
+// Hatalı kullanımlar
+val invalidNumber1 = _1000  // Hata: Sayı başında alt çizgi olmamalıdır.
+val invalidNumber2 = 1000_  // Hata: Sayı sonunda alt çizgi olmamalıdır.
