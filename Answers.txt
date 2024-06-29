@@ -731,3 +731,23 @@ Unsigned Shift Right operatörü, bir sayının bitlerini sağa kaydırırken i�
 
     val result = number ushr 2
     println(result) // Output: 1073741821 (00111111111111111111111111111101 in binary)
+
+
+
+
+
+
+
+
+
+
+
+16. Kotlin'de büyük sayılarla çalışırken hangi ek türlerden yararlanılır ve bu türlerin sınırları nelerdir?
+
+Kotlin'de büyük sayılarla çalışırken, BigInteger ve BigDecimal sınıflarından yararlanılır. 
+Bu sınıflar, Kotlin standard kütüphanesinin bir parçası değildir, ancak Java standard kütüphanesinden kolayca kullanılabilirler. 
+
+import java.math.BigDecimal  // Sınırsız büyüklükte tam sayılar için.
+import java.math.BigInteger  // Yüksek hassasiyetli ondalık sayılar için.
+
+BigInteger ve BigDecimal özelinde, sınırlar JVM'in atadığı belleğe göre değişebilir.
