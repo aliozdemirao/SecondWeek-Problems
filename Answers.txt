@@ -404,3 +404,21 @@ Type Inference sırasında eğer sayı Int aralığında değilse, tipi default 
 3. Float değişken oluştururken F ve f harfleri varken, Long değişken oluştururken neden küçük l harfi yoktur?
 
 Küçük l harfi, bazı yazı tiplerinde rakam olan 1 (bir) ile karışabilir. Bu, kodun okunabilirliğini azaltır ve potansiyel olarak hata yapma riskini artırır. Bu sebeple 'l' harfi kullanılmaz.
+
+
+
+
+
+
+
+
+
+
+4. Tek duyarlıklı (Single precision) ve Çift duyarlıklı (Double precision) kavramlarını açıklayın.
+
+Kotlin'de Tek Duyarlıklı (Single Precision) - Float ve Çift Duyarlıklı (Double Precision) Double veri tipleri, farklı hassasiyet ve bellek kullanım gereksinimlerine göre seçilir. 
+Float daha az bellek kullanımı ve yeterli hassasiyet gerektiren durumlar için uygundur, Double ise yüksek hassasiyet ve geniş değer aralığı gerektiren durumlar için tercih edilir. 
+
+Type		Size (bits)	Significant bits	Exponent bits	Decimal digits
+Float		32		24			8		6-7
+Double		64		53			11		15-16
