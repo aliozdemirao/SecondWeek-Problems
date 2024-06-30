@@ -811,3 +811,36 @@ UByte	8		0		255
 UShort	16		0		65,535
 UInt	32		0		4,294,967,295 (2^32 - 1)
 ULong	64		0		18,446,744,073,709,551,615 (2^64 - 1)
+
+
+
+
+
+
+
+
+
+
+
+2. "İşaretsiz" değişkenler nasıl bir sınıf yapısında tutulurlar? Bu neden önemlidir?
+
+Kotlin dilinde işaretsiz değişkenler özel sınıflar (classes) aracılığıyla tutulur. 
+Bu sınıflar, standart işaretli veri tiplerine benzer şekilde işlev görür, ancak yalnızca pozitif değerler ve sıfır içerirler. 
+İşaretsiz veri tipleri Kotlin standard kütüphanesinde yer alır ve UByte, UShort, UInt, ULong gibi sınıflar aracılığıyla temsil edilir.
+
+Bellek Verimliliği:
+İşaretsiz veri tipleri, aynı bellek boyutunda daha geniş pozitif aralık sunar. 
+Örneğin, bir UInt 0 ile 4,294,967,295 arasında değer alabilirken, Int -2,147,483,648 ile 2,147,483,647 arasında değer alabilir. 
+Bu, özellikle pozitif sayıların yaygın olduğu uygulamalarda bellek verimliliğini artırır.
+
+Veri Doğruluğu:
+Negatif değerlerin mantıksız veya geçersiz olduğu durumlarda işaretsiz veri tipleri kullanmak, hata yapma riskini azaltır ve veri doğruluğunu artırır. 
+Örneğin, indeksleme veya sayma işlemleri için negatif değerler geçersizdir ve işaretsiz veri tipleri bu tür hataları önler.
+
+Performans:
+İşaretsiz veri tipleri, bazı hesaplamalarda işaret kontrolü gerektirmediği için performans avantajı sağlayabilir. 
+Bu, özellikle düşük seviyeli işlemler veya sayısal algoritmalar için önemli olabilir.
+
+Kodun Anlamlılığı:
+İşaretsiz veri tiplerinin kullanımı, kodun niyetini daha açık hale getirir. 
+Örneğin, bir değişkenin negatif değer almasının mümkün olmadığını belirtmek, kodun okunabilirliğini ve anlaşılabilirliğini artırır.
