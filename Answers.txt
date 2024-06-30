@@ -904,3 +904,21 @@ u harfi, değerin işaretsiz bir tam sayı olduğunu belirtir, fakat büyük de�
 
     val unsignedLong: ULong = 12345678901234567890uL
     val maxUnsignedLong: ULong = 18446744073709551615UL
+
+
+
+
+
+
+
+
+
+
+
+6. "İşaretsiz" değişkenlerin kullanım amaçları nelerdir?
+
+1- Doğal Sayılar ve İndeksleme: Negatif değerlerin anlamsız olduğu diziler ve listeler.
+2- Sayma ve Sayaçlar: Pozitif sayma işlemleri.
+3- Bellek Adresleme ve Boyutlar: Bellek boyutları ve adresleri.
+4- Bit Manipülasyonu ve Maskeler: Bit işlemleri ve maskeler. 
+5- Matematiksel Hesaplamalar: Pozitif sayıların anlamlı olduğu matematiksel algoritmalar.
