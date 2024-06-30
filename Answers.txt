@@ -780,3 +780,34 @@ import java.math.RoundingMode
 
 val value = BigDecimal("9.87654321")
 val roundedHalfUp = value.round(MathContext.UNLIMITED).setScale(2, HALF_UP) // Çıktı: 9.88	Virgülden sonra 2. haneye göre işlem yapar.
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------- Unsigned Numbers -------------------------------------------------
+
+1. "İşaretsiz" (Unsigned) değişkenler ne demektir? İşaretli olanlarla aralarındaki fark nedir?
+
+İşaretsiz (unsigned) değişkenler, yalnızca pozitif sayıları ve sıfırı temsil eden veri tipleridir. 
+Bu veri tipleri, bellekte işaretsiz olarak saklandıkları için negatif değerleri alamazlar.
+
+Değer Aralığı:
+İşaretli (Signed) Değişkenler: Hem pozitif hem de negatif değerleri tutabilirler.
+İşaretsiz (Unsigned) Değişkenler: Sadece pozitif değerleri ve sıfırı tutabilirler.
+
+Bellek Kullanımı:
+İşaretli (Signed) Değişkenler: Genellikle en üstteki bit işaret biti olarak kullanılır ve geri kalan bitler değeri temsil eder.
+İşaretsiz (Unsigned) Değişkenler: Tüm bitler değeri temsil etmek için kullanılır.
+
+Type	Size (bits)	Min value	Max value
+UByte	8		0		255
+UShort	16		0		65,535
+UInt	32		0		4,294,967,295 (2^32 - 1)
+ULong	64		0		18,446,744,073,709,551,615 (2^64 - 1)
