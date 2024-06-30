@@ -864,3 +864,26 @@ Amaç: u harfi, değerlerin işaretsiz olduğunu belirterek hem derleyiciye hem 
     val unsignedShort: UShort = 65535u
     val unsignedInt: UInt = 4294967295u
     val unsignedLong: ULong = 18446744073709551615uL
+
+
+
+
+
+
+
+
+
+
+
+4. "val a1 = 42u ve val a2 = 0xFFFF_FFFF_FFFFu" değişkenlerin tipleri ne olur? Neden?
+
+a1: UInt, a2: ULong olur.
+
+42 değeri, işaretsiz tam sayı olarak UInt (32-bit) sınırları içerisindedir (0 ile 4,294,967,295 arasında).
+u harfi, değerin işaretsiz bir tam sayı olduğunu belirtir.
+Varsayılan olarak, küçük işaretsiz tam sayılar UInt olarak değerlendirilir.
+
+0xFFFF_FFFF_FFFF hexadecimal değeri, 281,474,976,710,655 ondalık değerine eşittir.
+Bu değer, UInt (32-bit) sınırlarını aşar çünkü UInt maksimum değeri 4,294,967,295'tir.
+Bu nedenle, değer ULong (64-bit) tipi olarak değerlendirilir (0 ile 18,446,744,073,709,551,615 arasında).
+u harfi, değerin işaretsiz bir tam sayı olduğunu belirtir, fakat büyük değerler ULong tipine atanır.
