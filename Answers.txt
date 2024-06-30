@@ -945,3 +945,21 @@ Taşma olmaması, bir işaretsiz değişkenin alabileceği minimum değerin alt�
 
 Kotlin, işaretsiz değişkenlerle yapılan matematiksel işlemler sırasında taşma ve taşma olmamasına karşı doğrudan kontrol sağlamaz.
 İşlemler, taşma veya taşma olmaması durumlarında döngüsel olarak devam eder.
+
+
+
+
+
+
+
+
+
+
+
+8. "İşaretsiz" değişkenlerin sınırlamaları nelerdir?
+
+Type	Size (bits)	Min value	Max value
+UByte	8		0		255
+UShort	16		0		65,535
+UInt	32		0		4,294,967,295 (2^32 - 1)
+ULong	64		0		18,446,744,073,709,551,615 (2^64 - 1)
