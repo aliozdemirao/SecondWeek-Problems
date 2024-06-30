@@ -844,3 +844,23 @@ Bu, özellikle düşük seviyeli işlemler veya sayısal algoritmalar için öne
 Kodun Anlamlılığı:
 İşaretsiz veri tiplerinin kullanımı, kodun niyetini daha açık hale getirir. 
 Örneğin, bir değişkenin negatif değer almasının mümkün olmadığını belirtmek, kodun okunabilirliğini ve anlaşılabilirliğini artırır.
+
+
+
+
+
+
+
+
+
+
+
+3. "İşaretsiz" değişkenlerin harf gösterimi nasıldır?
+
+Harf Gösterimi: İşaretsiz veri tipleri, değerlerinin sonuna 'u' / 'U' harfi eklenerek belirtilir.
+Amaç: u harfi, değerlerin işaretsiz olduğunu belirterek hem derleyiciye hem de okuyucuya bu değerin negatif olamayacağını belirtir.
+
+    val unsignedByte: UByte = 255u
+    val unsignedShort: UShort = 65535u
+    val unsignedInt: UInt = 4294967295u
+    val unsignedLong: ULong = 18446744073709551615uL
