@@ -887,3 +887,20 @@ Varsayılan olarak, küçük işaretsiz tam sayılar UInt olarak değerlendirili
 Bu değer, UInt (32-bit) sınırlarını aşar çünkü UInt maksimum değeri 4,294,967,295'tir.
 Bu nedenle, değer ULong (64-bit) tipi olarak değerlendirilir (0 ile 18,446,744,073,709,551,615 arasında).
 u harfi, değerin işaretsiz bir tam sayı olduğunu belirtir, fakat büyük değerler ULong tipine atanır.
+
+
+
+
+
+
+
+
+
+
+
+5. "İşaretsiz" "Long" harf gösterimi nasıl yapılır?
+
+İşaretsiz Long tipinde değişken oluşturmak için değerin sonuna "uL" ya da "UL" eklenmelidir.
+
+    val unsignedLong: ULong = 12345678901234567890uL
+    val maxUnsignedLong: ULong = 18446744073709551615UL
