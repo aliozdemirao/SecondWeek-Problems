@@ -1238,3 +1238,20 @@ x: Int tipinde ve çıktı: true olur.
 x: Long tipinde ve çıktı: true olur.
 
 Long bir sayıyı Int bir sayıya böldüğümüzde sonuç büyük olanın tipinde yani Long tipinde olur. 
+
+
+
+
+
+
+
+
+
+
+
+12. "val x = 5 / 2.toDouble() println(x == 2.5)" gibi bir işlemin sonucu ve tipi nedir? Neden böyle olduğunu açıklayın.
+
+x: Double tipinde ve çıktı: true olur.
+
+Önce Int tipindeki 2 sayısı Double tipine dönüştürülür ve 2.0 elde edilir.
+Sonra Int bir sayıyı Double bir sayıya böldüğümüzde sonuç büyük olan değişkenin tipinde yani Double tipinde olur.
