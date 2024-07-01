@@ -1255,3 +1255,17 @@ x: Double tipinde ve çıktı: true olur.
 
 Önce Int tipindeki 2 sayısı Double tipine dönüştürülür ve 2.0 elde edilir.
 Sonra Int bir sayıyı Double bir sayıya böldüğümüzde sonuç büyük olan değişkenin tipinde yani Double tipinde olur.
+
+
+
+
+
+
+
+
+
+
+
+13. Kotlin'de tür dönüşümü yapılırken, dönüşümün başarısız olması durumunda TypeCastException nasıl ele alınır ve bu tür hataların önüne geçmek için hangi önlemler alınabilir?
+
+Güvenli Tür Dönüşümü (as? kullanımı), Tip Kontrolü (is kullanımı) ve Try-Catch Bloğu kullanabiliriz.
