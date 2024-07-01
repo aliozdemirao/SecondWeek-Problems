@@ -981,3 +981,38 @@ Java, işaretsiz değişken türlerini doğrudan desteklemez; bu da bazı uyumlu
 
 1- Tip Dönüşümleri: İşaretsiz değişkenlerin işaretli değişkenlere doğru dönüştürülmesi.
 2- Taşma ve Taşma Olmaması: Manuel kontrollerle taşma ve taşma olmaması durumlarının yönetilmesi.
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------- Type Conversion -------------------------------------------------
+
+1. is ve !is operatörlerinin kullanımını açıklayın.
+
+Kotlin'de is ve !is operatörleri, özellikle tip kontrolü için kullanılır. Bu operatörler, bir değerin belirli bir tipe sahip olup olmadığını kontrol etmek için kullanılır.
+is operatörü, bir değişkenin belirli bir tipe sahip olup olmadığını kontrol eder. Eğer değişken belirtilen tipe sahipse, sonuç true döner; aksi halde false döner.
+!is operatörü, bir değişkenin belirli bir tipe sahip olmadığını kontrol eder. Eğer değişken belirtilen tipe sahip değilse, sonuç true döner; aksi halde false döner.
+
+Tip Kontrolünün Sonrası Güvenli Tip Dönüşümü:
+Kotlin'de is operatörü ile yapılan kontrol sonrasında, eğer kontrol başarılıysa, Kotlin değişkenin tipini otomatik olarak dönüştürür ve belirtilen tipe ait özellikler güvenli bir şekilde kullanılabilir.
+
+fun checkType(obj: Any) {
+    when (obj) {
+        is String -> println("String length is ${obj.length}") // Güvenli tip dönüşümü
+        is Int -> println("Double of the number is ${obj * 2}") // Güvenli tip dönüşümü
+        else -> println("Unknown type")
+    }
+}
+
+fun main() {
+    checkType("Hello")
+    checkType(10)
+    checkType(3.14)
+}
