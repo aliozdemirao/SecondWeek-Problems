@@ -1222,3 +1222,19 @@ Dolayısıyla, taşma sonucunda result değişkeni -2 değerini alır.
 x: Int tipinde ve çıktı: true olur.
 
 İki adet Int sayıyı böldüğümüzde sonuç da bir Int sayı olacaktır.
+
+
+
+
+
+
+
+
+
+
+
+11. "val x = 5L / 2 println(x == 2L)" gibi bir işlemin sonucu ve tipi nedir? Neden böyle olduğunu açıklayın.
+
+x: Long tipinde ve çıktı: true olur.
+
+Long bir sayıyı Int bir sayıya böldüğümüzde sonuç büyük olanın tipinde yani Long tipinde olur. 
