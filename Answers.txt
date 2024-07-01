@@ -1090,3 +1090,28 @@ as operatörü, bir nesneyi belirtilen türe dönüştürür. Eğer dönüşüm 
 	val obj: Any = "Kotlin"
 	val str: String = obj as String // str, "Kotlin" değerini alır
 	val num: Int = obj as Int // ClassCastException hatası fırlatılır
+
+
+
+
+
+
+
+
+
+
+
+
+4. Sayısal değişkenlerde örtük tip genişletme (implicit widening conversions) ne demektir? Kotlin'de bu neden yapılamaz?
+
+Örtük tip genişletme, programlama dillerinde daha küçük bir veri tipinin otomatik olarak daha büyük bir veri tipine dönüştürülmesidir. 
+Bu işlem, veri kaybı olmadan ve herhangi bir özel dönüştürme işlemi yapmaya gerek kalmadan gerçekleştirilir. Bu tür dönüştürmeler genellikle aşağıdaki gibi olur:
+
+Byte -> Short -> Int -> Long
+Float -> Double
+
+Kotlin'de Örtük Tip Genişletme
+Kotlin, Java'nın aksine, sayısal türlerde örtük tip genişletmeyi desteklemez. Yani, daha küçük bir veri tipi otomatik olarak daha büyük bir veri tipine dönüştürülmez. 
+Bu, geliştiricinin tür dönüşümlerini açıkça yapmasını gerektirir.
+Bu yaklaşım, kodun güvenliğini, açıklığını ve bakımını artırırken, beklenmedik hataların ortaya çıkma olasılığını azaltır. 
+Açık tip dönüşümleri, kodun ne yaptığını net bir şekilde belirtir ve geliştiricilerin kodu daha iyi anlamasını sağlar.
