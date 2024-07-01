@@ -1045,3 +1045,48 @@ fun main() {
     checkType(10)
     checkType(3.14)
 }
+
+
+
+
+
+
+
+
+
+
+
+
+3. "Güvenli & Güvensiz" operatörler nelerdir?
+
+Kotlin'de güvenli ve güvensiz operatörler, özellikle null güvenliği ve tür dönüşümleri ile ilgilidir. 
+
+
+Güvenli (Safe) Operatörler:
+
+1- Güvenli Çağrı Operatörü (Safe Call Operator): ?.
+?. operatörü, bir nesne null olabileceği durumlarda güvenli bir şekilde bu nesnenin üyelerine erişim sağlamak için kullanılır. 
+Eğer nesne null ise, o ifade null döner ve bir NullPointerException hatası oluşmaz.
+
+2- Elvis Operatörü (Elvis Operator): ?:
+?: operatörü, bir ifadenin null olup olmadığını kontrol eder ve eğer null ise bir varsayılan değer döner.
+
+3- Güvenli Tür Dönüşümü Operatörü (Safe Cast Operator): as?
+as? operatörü, bir nesneyi belirtilen türe güvenli bir şekilde dönüştürür. Eğer dönüşüm başarısız olursa, null döner.
+
+	val obj: Any = "Kotlin"
+	val str: String? = obj as? String // str, "Kotlin" değerini alır
+	val num: Int? = obj as? Int // num, null değerini alır çünkü obj bir String'dir, Int değil
+
+
+Güvensiz (Unsafe) Operatörler:
+
+1- Null Kesinleştirme Operatörü (Not-null Assertion Operator): !!
+!! operatörü, bir ifadenin null olmadığından emin olunur ve null olursa NullPointerException hatası fırlatılır. Bu operatör dikkatli kullanılmalıdır çünkü hatalara yol açabilir.
+
+2- Güvensiz Tür Dönüşümü Operatörü (Unsafe Cast Operator): as
+as operatörü, bir nesneyi belirtilen türe dönüştürür. Eğer dönüşüm başarısız olursa, ClassCastException hatası fırlatır.
+
+	val obj: Any = "Kotlin"
+	val str: String = obj as String // str, "Kotlin" değerini alır
+	val num: Int = obj as Int // ClassCastException hatası fırlatılır
