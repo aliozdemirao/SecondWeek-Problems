@@ -1175,3 +1175,34 @@ toUByte(), toUShort(), toUInt(), toULong(), toDuration(), toBigDecimal(), toBigI
 result: Long tipinde ve değeri: 4 dür.
 
 İki değişken toplandığında sonuç, değişkenlerden tipi büyük olana göre belirlenir.
+
+
+
+
+
+
+
+
+
+
+
+9. "val result = Int.MAX_VALUE + Int.MAX_VALUE" gibi bir işlemin sonucunda "result" değişkeninin tipi ve değeri ne olur? Neden böyle olduğunu açıklayın.
+
+result: Int tipinde ve değeri: -2 dir.
+
+Int.MAX_VALUE, Kotlin'de Int tipinin alabileceği en büyük değeri ifade eder. Bu değer 2^31 - 1, yani 2147483647'dir.
+İki Int.MAX_VALUE değeri toplandığında sonuç 4294967294 olur.
+Int türü, -2^31 (-2147483648) ile 2^31 - 1 (2147483647) arasındaki değerleri alabilir. Bu nedenle 4294967294 değeri Int türünde taşma (overflow) oluşturur.
+
+Ancak burada önemli olan, toplama işleminin Int türünde gerçekleşmesi ve Int türünün 32-bit olmasıdır. 
+Kotlin'de Int türü sınırını aşan bir işlem yapıldığında, taşma sonucunda değeri mod 2^32 işlemi ile hesaplanır. 
+Yani, eğer Int türü taşarsa, sonuç negatif bir değere dönüşebilir.
+
+Taşma(Overflow) Hesaplaması
+Toplam şu şekilde hesaplanır:
+2147483647 + 2147483647 = 4294967294
+
+Bu değeri Int türüne dönüştürdüğümüzde taşma meydana gelir. Hesaplama şu şekildedir:
+4294967294 - 2^32 = 4294967294 - 4294967296 = -2
+
+Dolayısıyla, taşma sonucunda result değişkeni -2 değerini alır.
