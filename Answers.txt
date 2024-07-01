@@ -1159,3 +1159,19 @@ Bu kod, print(b == i) ifadesinden dolayı derlenme hatası verir çünkü farkl�
 
 toByte(), toShort(), toInt(), toLong(), toDouble(), toFloat(), toChar(), toString(),
 toUByte(), toUShort(), toUInt(), toULong(), toDuration(), toBigDecimal(), toBigInteger() gibi fonksiyonlar kullanılabilir.
+
+
+
+
+
+
+
+
+
+
+
+8. "val result = 1L + 3" // "Long + Int" gibi bir işlemin sonucunda "result" değişkeninin tipi ve değeri ne olur? Neden böyle olduğunu açıklayın.
+
+result: Long tipinde ve değeri: 4 dür.
+
+İki değişken toplandığında sonuç, değişkenlerden tipi büyük olana göre belirlenir.
