@@ -1115,3 +1115,32 @@ Kotlin, Java'nın aksine, sayısal türlerde örtük tip genişletmeyi desteklem
 Bu, geliştiricinin tür dönüşümlerini açıkça yapmasını gerektirir.
 Bu yaklaşım, kodun güvenliğini, açıklığını ve bakımını artırırken, beklenmedik hataların ortaya çıkma olasılığını azaltır. 
 Açık tip dönüşümleri, kodun ne yaptığını net bir şekilde belirtir ve geliştiricilerin kodu daha iyi anlamasını sağlar.
+
+
+
+
+
+
+
+
+
+
+
+5. "val b: Byte = 1 ile val i: Int = b ve son olarak print(b == i) gibi bir kod yazıldığında çıktı ne olur? Neden böyle bir çıktı aldığınızı açıklayın.
+
+Bu kod derlenme hatası verir. Çünkü Kotlin'de örtük tip genişletme yoktur. Dolayısı ile val i: Int = b hata verecektir. 
+Ayrıca print(b == i) ifadesi de hata verir. Çünkü farklı iki tip değişkeni == ile karşılaştıramayız.
+
+
+
+
+
+
+
+
+
+
+
+6. "val b: Byte = 1 ile val i: Int = b.toInt() ve son olarak print(b == i) gibi bir kod yazıldığında çıktı ne olur? Neden böyle bir çıktı aldığınızı açıklayın.
+
+Bu kod, print(b == i) ifadesinden dolayı derlenme hatası verir çünkü farklı iki tip (Byte ve Int) değişkeni == ile karşılaştıramayız.
