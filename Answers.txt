@@ -1144,3 +1144,18 @@ Ayrıca print(b == i) ifadesi de hata verir. Çünkü farklı iki tip değişken
 6. "val b: Byte = 1 ile val i: Int = b.toInt() ve son olarak print(b == i) gibi bir kod yazıldığında çıktı ne olur? Neden böyle bir çıktı aldığınızı açıklayın.
 
 Bu kod, print(b == i) ifadesinden dolayı derlenme hatası verir çünkü farklı iki tip (Byte ve Int) değişkeni == ile karşılaştıramayız.
+
+
+
+
+
+
+
+
+
+
+
+7. Sayısal değişkenlerde açık dönüşüm (Explicit Type Conversion) yaparken hangi fonksiyonları kullanabilirsiniz?
+
+toByte(), toShort(), toInt(), toLong(), toDouble(), toFloat(), toChar(), toString(),
+toUByte(), toUShort(), toUInt(), toULong(), toDuration(), toBigDecimal(), toBigInteger() gibi fonksiyonlar kullanılabilir.
