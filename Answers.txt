@@ -1016,3 +1016,32 @@ fun main() {
     checkType(10)
     checkType(3.14)
 }
+
+
+
+
+
+
+
+
+
+
+
+2. "Akıllı Dönüşüm" (Smart Cast) ne demektir? Farklı kod örnekleri ile açıklayın. Bu özelliğin sınırlamaları nelerdir?
+
+Kotlin'de Akıllı Dönüşüm (Smart Cast), bir değişkenin tipi kontrol edildikten sonra, güvenli bir şekilde o tipe dönüştürülmesini sağlar. 
+is operatörü ile yapılan tip kontrolü sonrasında, Kotlin derleyicisi, o değişkenin belirtilen tipe sahip olduğunu bilir ve bu tipin özelliklerini ve fonksiyonlarını kullanmanıza olanak tanır. 
+
+fun checkType(obj: Any) {
+    when (obj) {
+        is String -> println("String length is ${obj.length}") // Güvenli tip dönüşümü
+        is Int -> println("Double of the number is ${obj * 2}") // Güvenli tip dönüşümü
+        else -> println("Unknown type")
+    }
+}
+
+fun main() {
+    checkType("Hello")
+    checkType(10)
+    checkType(3.14)
+}
